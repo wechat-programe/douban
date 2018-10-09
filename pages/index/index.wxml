@@ -1,0 +1,16 @@
+<view class="page-header">
+	<text class="page-header-text">{{text}}</text>
+</view>
+<scroll-view scroll-y class="page-body">
+	<navigator url="../detail/detail?id={{item.id}}" wx:for="{{movies}}">
+		<view class="item">
+			<image class="poster" src="{{item.images.small}}"></image>
+			<view class="meta">
+				<text class="title">{{item.title}}</text><text class="sub-title">{{item.original_title}}({{item.year}})</text><text class="artists" wx:for="{{item.directors}}" wx:for-item="i">{{i.name}}</text>
+			</view>
+			<view class="rating">
+				<text>{{item.rating.average}}</text>
+			</view>
+		</view>
+	</navigator>
+</scroll-view>
